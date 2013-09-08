@@ -13,6 +13,7 @@
                    displayName="Source Files"
                    projectFiles="true">
       <itemPath>main.c</itemPath>
+      <itemPath>mystd.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
@@ -115,6 +116,7 @@
         <property key="program-the-device-with-default-config-words" value="true"/>
       </HI-TECH-LINK>
       <PICkit3PlatformTool>
+        <property key="firmware.download.all" value="false"/>
       </PICkit3PlatformTool>
       <XC8-config-global>
         <property key="output-file-format" value="-mcof,+elf"/>
