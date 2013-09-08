@@ -1,6 +1,5 @@
 /*
  * File:   main.c
- * Author: g
  *
  * Created on September 8, 2013, 10:26 AM
  */
@@ -36,7 +35,7 @@ void main(void)
     init();
 
     while(1) {
-        PORTC = out;                 // output to port c
+        PORTC = ~out;                 // output to port c (LO: LED ON)
         out++;
 
         for(unsigned long i = 0;i < 16; i++)   // 65ms * 16 = 1040ms
