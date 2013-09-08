@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://www.netbeans.org/ns/project/1">
+    <type>com.microchip.mplab.nbide.embedded.makeproject</type>
+    <configuration>
+        <data xmlns="http://www.netbeans.org/ns/make-project/1">
+            <name>pic_vol_rotary_enc</name>
+            <creation-uuid>2ae67cb6-b2f1-4022-a6e0-8261d9c4b0fb</creation-uuid>
+            <make-project-type>0</make-project-type>
+            <c-extensions>c</c-extensions>
+            <cpp-extensions/>
+            <header-extensions/>
+            <sourceEncoding>UTF-8</sourceEncoding>
+            <make-dep-projects/>
+        </data>
+    </configuration>
+</project>

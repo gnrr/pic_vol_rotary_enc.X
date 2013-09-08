@@ -1,0 +1,13 @@
+*.obj
+*.sym
+*.sdb
+*.rlf
+*.map
+*.lst
+*.hxl
+*.elf
+*.cmf
+*.pre
+*.p1
+*.p1.d
+funclist
