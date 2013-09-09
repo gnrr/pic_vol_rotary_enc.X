@@ -4,8 +4,7 @@
  * Created on September 8, 2013, 10:26 AM
  */
 
-#include <xc.h>
-#include "mystd.h"
+#include <p18cxxx.h>
 
 // PIC18F14K50
 #pragma config FOSC   = HS,  PLLEN  = ON,  FCMEN  = OFF
@@ -17,6 +16,8 @@
 #pragma config CP0    = OFF, CP1    = OFF, CPB    = OFF
 #pragma config WRT0   = OFF, WRT1   = OFF, WRTB   = OFF, WRTC   = OFF
 #pragma config EBTR0  = OFF, EBTR1  = OFF, EBTRB  = OFF
+
+#include "mystd.h"
 
 #define ROT_NA  0
 #define ROT_FF  1
@@ -43,8 +44,19 @@ void init(void)
     rot = ROT_NA;
 }
 
+void read_rotary_encoder(void);         // prototype needed for 'goto' below
 
-interrupt void read_rotary_encoder(void)
+#pragma code HIGH_INTERRUPT_VECTOR = 0x8
+void high_ISR (void)
+{
+    _asm
+    goto read_rotary_encoder
+    _endasm
+}
+#pragma code  // allow the linker to locate the remaining code
+
+#pragma interrupt read_rotary_encoder
+void read_rotary_encoder(void)
 {
     static u1 i;
     u1 new;
@@ -66,9 +78,9 @@ interrupt void read_rotary_encoder(void)
 
 void main(void)
 {
-    init();
-
     volatile u1 out = 0;
+
+    init();
 
     while(1) {
         if(rot == ROT_NA) continue;

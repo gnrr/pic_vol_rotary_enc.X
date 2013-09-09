@@ -1,3 +1,4 @@
+*.cof
 *.obj
 *.sym
 *.sdb
@@ -10,4 +11,5 @@
 *.pre
 *.p1
 *.p1.d
+*.o.d
 funclist
